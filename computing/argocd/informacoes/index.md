@@ -1,4 +1,3 @@
-```markdown
 # Produto A
 ## Sobre o Produto
 Descreva seu produto aqui. Fale sobre os benefícios, características principais e qualquer outra informação relevante.
@@ -13,4 +12,3 @@ Fornecer instruções iniciais ou um link para a documentação de início rápi
 Informações sobre como obter suporte e se conectar com a comunidade.
 ## Contribuições
 Como contribuir para o desenvolvimento e melhorias do produto. Link para `CONTRIBUTING.md` se aplicável.
-```
