@@ -20,7 +20,7 @@ jobs:
           go-version: '^1.16'
 
       - name: Install dependencies      
-        run: go mod init blackfriday; go install github.com/russross/blackfriday/v2
+        run: go mod init blackfriday; go get github.com/russross/blackfriday/v2
 
       - name: Convert Markdown to HTML
         run: go run ./src/convert_md_2_html.go
