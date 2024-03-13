@@ -37,7 +37,7 @@ func processFile(path string, info fs.FileInfo, err error) error {
 }
 
 func main() {
-	root := "./" // Defina o diretório raiz conforme necessário
+	root := "./platforms" // Defina o diretório raiz conforme necessário
 	err := filepath.Walk(root, processFile)
 	if err != nil {
 		panic(err)

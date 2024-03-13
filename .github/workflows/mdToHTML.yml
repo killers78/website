@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Go
         uses: actions/setup-go@v2
@@ -25,6 +25,21 @@ jobs:
       - name: Convert Markdown to HTML
         run: go run ./src/convert_md_2_html.go
 
-      - name: Display some HTML Content
-        run: cat computing/argocd/informacoes/index.html
+      - name: Find HTML Content and move to temp folder
+        run: find platforms -type f -name \*.html | while read a; do  mv $a www-temp/; done
 
+
+      # Setting up Git user to commit to the gh-pages branch
+      #- name: Configure Git User
+      #  run: |
+      #    git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #    git config --global user.name "GitHub Actions"
+
+      # Deploy to GitHub Pages
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./wwwroot # Directory where HTML files are stored
+          publish_branch: gh-pages # Target branch to deploy your site
+          keep_files: true # Set to false if you want to overwrite the existing content
