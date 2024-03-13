@@ -11,7 +11,7 @@ import (
 
 func convertMarkdownToHTML(input string) (string, error) {
 	output := blackfriday.Run([]byte(input))
-	#fmt.Println("HTML: ", output)
+	//fmt.Println("HTML: ", output)
 	return string(output), nil
 }
 
