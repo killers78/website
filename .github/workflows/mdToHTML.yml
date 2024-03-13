@@ -41,7 +41,7 @@ jobs:
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.WEBSITE_PAT }}
           publish_dir: ./www-temp # Directory where HTML files are stored
           publish_branch: gh-pages # Target branch to deploy your site
           keep_files: true # Set to false if you want to overwrite the existing content
