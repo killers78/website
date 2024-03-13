@@ -29,13 +29,15 @@ jobs:
         run: |
            mkdir -p www-temp
            find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
+           pwd
+           ls -ltr ./www-temp
 
 
       # Setting up Git user to commit to the gh-pages branch
-      #- name: Configure Git User
-      #  run: |
-      #    git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #    git config --global user.name "GitHub Actions"
+      - name: Configure Git User
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
 
       # Deploy to GitHub Pages
       - name: Deploy to gh-pages
