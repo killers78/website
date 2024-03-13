@@ -26,7 +26,9 @@ jobs:
         run: go run ./src/convert_md_2_html.go
 
       - name: Find HTML Content and move to temp folder
-        run: find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
+        run: |
+           mkdir -p www-temp
+           find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
 
 
       # Setting up Git user to commit to the gh-pages branch
