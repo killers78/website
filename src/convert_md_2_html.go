@@ -24,7 +24,7 @@ func processFile(path string, info fs.FileInfo, err error) error {
         platform := parts[2]
         product  := parts[3]
         fmt.Println("Segunda parte do caminho:", platform)
-        fmt.Println("Segunda parte do caminho:", product)
+        fmt.Println("Terceira parte do caminho:", product)
     } else {
         fmt.Println("O caminho não contém pelo menos 3 partes.")
     }
