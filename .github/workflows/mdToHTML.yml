@@ -39,19 +39,13 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
 
-     
-      #- name: Deploy to gh-pages
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  with:
-      #    github_token: ${{ secrets.WEBSITE_PAT }}
-      #    publish_dir: www-temp # Directory where HTML files are stored
-      #    publish_branch: gh-pages # Target branch to deploy your site
-      #    keep_files: true # Set to false if you want to overwrite the existing content
 
        # Deploy to GitHub Pages
       - name: Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.WEBSITE_PAT }}
-          publish_dir: www-temp # Directory where HTML files are stored
+         github_token: ${{ secrets.WEBSITE_PAT }}
+         publish_dir: www-temp # Directory where HTML files are stored
+         publish_branch: gh-pages
+         keep_files: false
 
