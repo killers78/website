@@ -53,6 +53,6 @@ jobs:
       - name: Adding HTML CSS Headers
         run: |
            cd www-temp
-           ls -1| while read i do; cp header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
+           ls -1| while read i; do cp header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
 
       
