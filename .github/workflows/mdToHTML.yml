@@ -37,8 +37,8 @@ jobs:
         run: |
            cd www-temp
            mkdir css           
-           cp  $GITHUB_WORKSPACE/src/css/*.html www-temp/css
-           cp  $GITHUB_WORKSPACE/src/css/*.css www-temp/
+           cp  $GITHUB_WORKSPACE/src/css/*.html css
+           cp  $GITHUB_WORKSPACE/src/css/*.css .
            ls -1 | while read i; do cp css/header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
            ls -1 | while read i; do echo "-----------------"; cat $i; done
         working-directory: ${{ github.workspace }}
