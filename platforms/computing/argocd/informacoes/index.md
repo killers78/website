@@ -1,8 +1,7 @@
-`markdown
 <html>
 <head>
     <title>Markdown with CSS</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
 </head>
 <body>
 
@@ -23,28 +22,3 @@ Como contribuir para o desenvolvimento e melhorias do produto. Link para `CONTRI
 
 </body>
 </html>
-`
-`css
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-color: #fff; /* White text color */
-background-color: #243f2b; /* Dark green background color */
-}
-h1 {
-color: #fff; /* White color for h1 */
-}
-h2 {
-color: #cfd8dc; /* Light grey color for h2 */
-}
-ul {
-list-style-type: disc; /* Use bullet points for lists */
-}
-a {
-color: #4caf50; /* Green color for links */
-text-decoration: none; /* Remove underline from links */
-}
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-body {
-font-family: 'Roboto', sans-serif;
-}
-`
