@@ -1,3 +1,6 @@
+<style>
+@import url('../../../css/style.css');
+</style>
 # Produto ARGOCD
 ## Sobre o Produto
 Descreva seu produto aqui. Fale sobre os benefícios, características principais e qualquer outra informação relevante.
