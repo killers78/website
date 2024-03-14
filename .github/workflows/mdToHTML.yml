@@ -22,23 +22,26 @@ jobs:
       - name: Install dependencies      
         run: go mod init blackfriday; go get github.com/russross/blackfriday/v2
 
-      - name: Convert Markdown to HTML
+      - name: Convert Markdown to HTML        
         run: go run ./src/convert_md_2_html.go
+        working-directory: ${{ github.workspace }}
 
       - name: Find HTML Content and move to temp folder
         run: |
            mkdir -p www-temp
            find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
+        working-directory: ${{ github.workspace }}
 
       # Adding HTML CSS Header
       - name: Adding HTML CSS Header
         run: |
            cd www-temp
            mkdir css           
-           cp ./src/css/*.html www-temp/css
-           cp ./src/css/*.css www-temp/
+           cp  $GITHUB_WORKSPACE/src/css/*.html www-temp/css
+           cp  $GITHUB_WORKSPACE/src/css/*.css www-temp/
            ls -1 | while read i; do cp css/header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
            ls -1 | while read i; do echo "-----------------"; cat $i; done
+        working-directory: ${{ github.workspace }}
            
       # Setting up Git user to commit to the gh-pages branch
       - name: Configure Git User
