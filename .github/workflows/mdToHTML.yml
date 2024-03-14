@@ -35,14 +35,15 @@ jobs:
       # Adding HTML CSS Header
       - name: Adding HTML CSS Header
         run: |
+           pwd
+           ls -ltrh
            cd www-temp
            mkdir css           
            cp  $GITHUB_WORKSPACE/src/css/*.html css
            cp  $GITHUB_WORKSPACE/src/css/*.css .
            ls -1 | while read i; do cp css/header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
            #ls -1 | while read i; do echo "-----------------"; cat $i; done
-           pwd
-           ls -ltrh
+
         working-directory: ${{ github.workspace }}
            
       # Setting up Git user to commit to the gh-pages branch
