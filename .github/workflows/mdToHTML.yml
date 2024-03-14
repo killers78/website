@@ -49,8 +49,8 @@ jobs:
          keep_files: false
 
       
-      # Adding HTML CSS Headers
-      - name: Adding HTML CSS Headers
+      # Adding HTML CSS Header
+      - name: Adding HTML CSS Header
         run: |
            cp ./src/css/* www-temp/
            cd www-temp
