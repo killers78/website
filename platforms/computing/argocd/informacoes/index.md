@@ -1,6 +1,11 @@
-<style>
-@import url('../../../css/style.css');
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown with CSS</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+</head>
+<body>
+
 # Produto ARGOCD
 ## Sobre o Produto
 Descreva seu produto aqui. Fale sobre os benefícios, características principais e qualquer outra informação relevante.
