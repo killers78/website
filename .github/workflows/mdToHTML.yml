@@ -50,9 +50,11 @@ jobs:
       # Adding HTML CSS Header
       - name: Adding HTML CSS Header
         run: |
-           cp ./src/css/* www-temp/
            cd www-temp
-           ls -1 | while read i; do cp header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
+           mkdir css           
+           cp ./src/css/*.html www-temp/css
+           cp ./src/css/*.css www-temp/
+           ls -1 | while read i; do cp css/header.html tmp.html; cat $i >> tmp.html; mv tmp.html $i; rm -f tmp.html; done
            ls -1 | while read i; do echo "-----------------"; cat $i; done
 
       
