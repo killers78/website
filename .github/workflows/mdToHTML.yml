@@ -29,8 +29,7 @@ jobs:
         run: |
            mkdir -p www-temp
            find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
-           pwd
-           ls -ltr ./www-temp
+           
 
 
       # Setting up Git user to commit to the gh-pages branch
@@ -49,3 +48,16 @@ jobs:
          publish_branch: gh-pages
          keep_files: false
 
+      
+      # Adding HTML CSS Headers
+      - name: Adding HTML CSS Headers
+        run: |
+           cd www-temp
+           ls -1 www-temp| while read i do
+           cp header.html tmp.html
+           cat $i >> tmp.html
+           mv tmp.html $i
+           rm -f tmp.html
+           done
+
+      
