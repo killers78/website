@@ -30,8 +30,6 @@ jobs:
            mkdir -p www-temp
            find platforms -type f -name \*.html | while read a; do  mv $a ./www-temp/; done
            
-
-
       # Setting up Git user to commit to the gh-pages branch
       - name: Configure Git User
         run: |
